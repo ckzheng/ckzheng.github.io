@@ -1,0 +1,157 @@
+baseURL = "https://ckzheng.github.io/"
+title = "ckzheng's Log"
+theme = "PaperMod"
+
+# 语言设置
+[languages.en]
+label = "English"
+weight = 1
+locale = "en-us"
+
+# 分页：每页文章数
+[pagination]
+pagerSize = 10
+
+# 启用代码高亮、目录等
+enableInlineShortcodes = true
+enableEmoji = true
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+
+# 生成的额外输出格式（PaperMod 搜索功能需要 JSON）
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
+[minify]
+disableXML = true
+minifyOutput = true
+
+#######################################
+# 站点参数
+#######################################
+[params]
+env = "production"
+title = "ckzheng's Log"
+description = "Notes on reinforcement learning, LLMs, and machine learning research."
+keywords = ["Blog", "RL", "LLM", "Machine Learning", "Research"]
+author = "ckzheng"
+DateFormat = "January 2, 2006"
+defaultTheme = "auto"          # auto / light / dark
+disableThemeToggle = false
+
+ShowReadingTime = true
+ShowShareButtons = false
+ShowPostNavLinks = true
+ShowBreadCrumbs = true
+ShowCodeCopyButtons = true
+ShowWordCount = true
+ShowRssButtonInSectionTermList = true
+UseHugoToc = true
+ShowToc = true                 # 文章页显示目录（仿 Lilian Weng 的右侧/顶部目录）
+TocOpen = false                # 目录默认折叠
+disableSpecial1stPost = false
+disableScrollToTop = false
+hidemeta = false
+hideSummary = false
+
+# 启用数学公式（MathJax / KaTeX）
+math = true
+
+# 首页采用 Profile 模式（仿 Lilian Weng 的个人主页式首页）
+[params.profileMode]
+enabled = true
+title = "ckzheng"
+subtitle = "Reinforcement Learning · LLMs · Machine Learning Research<br>Notes, papers, and ideas I'm working through."
+imageUrl = "images/avatar.png"   # 可替换为你的头像，放在 static/images/
+imageTitle = "avatar"
+imageWidth = 140
+imageHeight = 140
+
+[[params.profileMode.buttons]]
+name = "Posts"
+url = "posts"
+
+[[params.profileMode.buttons]]
+name = "Archive"
+url = "archives"
+
+[[params.profileMode.buttons]]
+name = "Tags"
+url = "tags"
+
+# 社交图标（首页底部）
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/ckzheng"
+
+[[params.socialIcons]]
+name = "x"
+url = "https://x.com/ckzheng"
+
+[[params.socialIcons]]
+name = "email"
+url = "mailto:you@example.com"
+
+[[params.socialIcons]]
+name = "rss"
+url = "index.xml"
+
+# 文章封面图设置
+[params.cover]
+hidden = false
+hiddenInList = false
+hiddenInSingle = false
+
+# 搜索功能配置（Fuse.js）
+[params.fuseOpts]
+isCaseSensitive = false
+shouldSort = true
+location = 0
+distance = 1000
+threshold = 0.4
+minMatchCharLength = 0
+keys = ["title", "permalink", "summary", "content"]
+
+#######################################
+# 顶部导航菜单
+#######################################
+[menu]
+[[menu.main]]
+identifier = "posts"
+name = "Posts"
+url = "/posts/"
+weight = 10
+
+[[menu.main]]
+identifier = "archives"
+name = "Archive"
+url = "/archives/"
+weight = 20
+
+[[menu.main]]
+identifier = "tags"
+name = "Tags"
+url = "/tags/"
+weight = 30
+
+[[menu.main]]
+identifier = "search"
+name = "Search"
+url = "/search/"
+weight = 40
+
+#######################################
+# 代码高亮设置
+#######################################
+[markup]
+[markup.highlight]
+noClasses = false
+codeFences = true
+guessSyntax = true
+lineNos = false
+style = "monokai"
+
+[markup.goldmark.renderer]
+unsafe = true                  # 允许文章内嵌 HTML（公式、特殊排版需要）

@@ -1,0 +1,4 @@
+{{- /* PaperMod head 扩展钩子：仅在页面或站点开启 math 时加载 MathJax */ -}}
+{{ if or .Params.math .Site.Params.math }}
+  {{ partialCached "math/mathjax.html" . }}
+{{ end }}

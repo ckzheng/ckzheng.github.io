@@ -1,0 +1,29 @@
+/* 仿 Lilian Weng 阅读体验的微调 */
+
+/* 适当加宽正文，长公式和代码更舒展 */
+.main {
+    max-width: 800px;
+}
+
+/* 块级公式横向滚动，避免长公式溢出 */
+mjx-container[display="true"] {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+    padding: 0.5em 0;
+}
+
+/* 目录样式微调 */
+.toc {
+    border-radius: 8px;
+}
+
+/* 文章正文行距更适合长文阅读 */
+.post-content {
+    line-height: 1.75;
+}
+
+/* 代码块圆角 */
+.post-content pre {
+    border-radius: 8px;
+}
