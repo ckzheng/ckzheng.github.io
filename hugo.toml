@@ -64,10 +64,6 @@ math = true
 enabled = true
 title = "ckzheng"
 subtitle = "Reinforcement Learning · LLMs · Machine Learning Research<br>Notes, papers, and ideas I'm working through."
-imageUrl = "images/avatar.png"   # 可替换为你的头像，放在 static/images/
-imageTitle = "avatar"
-imageWidth = 140
-imageHeight = 140
 
 [[params.profileMode.buttons]]
 name = "Posts"
