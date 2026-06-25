@@ -1,5 +1,5 @@
 baseURL = "https://ckzheng.github.io/"
-title = "ckzheng's Log"
+title = "ckzheng's Thinking Experiments"
 theme = "PaperMod"
 
 # 语言设置
@@ -33,7 +33,7 @@ minifyOutput = true
 #######################################
 [params]
 env = "production"
-title = "ckzheng's Log"
+title = "ckzheng's Thinking Experiments"
 description = "Notes on reinforcement learning, LLMs, and machine learning research."
 keywords = ["Blog", "RL", "LLM", "Machine Learning", "Research"]
 author = "ckzheng"
@@ -59,9 +59,9 @@ hideSummary = false
 # 启用数学公式（MathJax / KaTeX）
 math = true
 
-# 首页采用 Profile 模式（仿 Lilian Weng 的个人主页式首页）
+# 首页直接展示文章列表（关闭 Profile 模式，根域名 = posts 流）
 [params.profileMode]
-enabled = true
+enabled = false
 title = "ckzheng"
 subtitle = "Reinforcement Learning · LLMs · Machine Learning Research<br>Notes, papers, and ideas I'm working through."
 
@@ -134,3 +134,11 @@ style = "monokai"
 
 [markup.goldmark.renderer]
 unsafe = true                  # 允许文章内嵌 HTML（公式、特殊排版需要）
+
+# 数学公式透传：让 $...$ 和 $$...$$ 内的内容原样交给 MathJax，
+# 不被 Markdown 解析（否则下标 _ 会被当成斜体 <em> 破坏公式）
+[markup.goldmark.extensions.passthrough]
+enable = true
+[markup.goldmark.extensions.passthrough.delimiters]
+block = [['\[', '\]'], ['$$', '$$']]
+inline = [['\(', '\)'], ['$', '$']]
